@@ -30,14 +30,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web. In this guide, we'll briefly introduce the DOM. We'll look at how the DOM represents an HTML or XML document in memory and how you use APIs to create web content and applications.
+
 2. What is an event?
+
+Events are "things" that happen to HTML elements, like click, move, mouseover....
+
 
 3. What is an event listener?
 
+An event listener is a procedure or function in a computer program that waits for an event to occur. Examples of an event are the user clicking or moving the mouse, pressing a key on the keyboard, disk I/O, network activity, or an internal timer or interrupt. The listener is programmed to react to an input or signal by calling the event's handler.
+
 4. Why would we convert a NodeList into an Array?
+
+so we can use js functions on it.  Like filter, reduce..
 
 5. What is a component?
 
+Components are stand-alone, independent parts of the application which are responsible for handling only one job and don’t know about each other.
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
