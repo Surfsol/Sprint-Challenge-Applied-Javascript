@@ -15,7 +15,7 @@ axios
     console.log(response.data.topics);
     response.data.topics.forEach(e => {
       console.log(e);
-      tabDiv.appendChild(createTab(e))
+      //tabDiv.appendChild(createTab(e))
       tabDiv = document.querySelector(".tabs").appendChild(createTab(e));
     });
   });

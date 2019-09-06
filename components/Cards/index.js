@@ -35,15 +35,60 @@ Array.map(e =>{
     let cardDiv1 = document.querySelector(".cards").appendChild(
         profileCreator(
         */
-
-
-
 axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
+    let list = Object.keys(response.data.articles);
+    //console.log(list);
+    list.forEach(eE => {
+      let newArray = response.data.articles[eE];
+      newArray.map(e => {
+        console.log(e.authorPhoto);
+        let cc = document
+          .querySelector(".cards-container")
+          .appendChild(createCards(e.authorName, e.authorPhoto, e.headline));
+      });
+    });
+  });
+
+function createCards(authorName, authorPhoto, headline) {
+  //elements
+  let cardClass = document.createElement("div");
+  let headlineClass = document.createElement("div");
+  let authorClass = document.createElement("div");
+  let imgClass = document.createElement("div");
+  let imgSrc = document.createElement("img");
+  let by = document.createElement("span");
+
+  //classes
+  cardClass.classList.add("card");
+  headlineClass.classList.add("headline");
+  authorClass.classList.add("author");
+  imgClass.classList.add("img-container");
+
+  // append
+  cardClass.appendChild(headlineClass);
+  cardClass.appendChild(authorClass);
+  authorClass.appendChild(imgClass);
+  imgClass.appendChild(imgSrc);
+  authorClass.appendChild(by);
+
+  //text content
+  headlineClass.textContent = headline;
+  imgSrc.src = authorPhoto;
+  by.textContent = authorName;
+
+  return cardClass;
+}
+
+/*
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    console.log(Object.keys.response.data.articles);
     console.log(response.data.articles["javascript"]);
     response.data.articles["javascript"].map(e => {
-      console.log(e);
+      console.log(e.authorPhoto);
       let cc = document
         .querySelector(".cards-container")
         .appendChild(createCards(e.authorName, e.authorPhoto, e.headline));
@@ -289,3 +334,4 @@ function createCards(authorName, authorPhoto, headline) {
 
   return cardClass;
 }
+*/
